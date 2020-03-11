@@ -97,9 +97,11 @@
 									{{ csrf_field() }}
 									<!--{{ method_field('DELETE') }}-->
 									<input type="hidden" name="id_actividad" value="{{$actividad->id}}" />
+									@if (!$actividad->id == null)
 									<button type="submit" class="btn btn-danger">
 										<i class="fa fa-trash"></i>Eliminar
 									</button>
+									@endif
 								</form>
 							</td>
 						</tr>

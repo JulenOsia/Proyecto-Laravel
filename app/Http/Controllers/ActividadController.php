@@ -70,7 +70,11 @@ class ActividadController extends Controller
                 }
             }
             if (empty($busqueda)) {
-                $busqueda[] = "no se ha encontrado";
+                $actividad['nombre'] = "No se encontraron resultados";
+                $actividad['fecha'] = 01/01/0001;
+                $actividad['id'] = null;
+
+                $busqueda[] = $actividad;
             }
         }
         return view('actividades', ['actividades' => $busqueda]);
